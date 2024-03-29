@@ -1,6 +1,3 @@
 {
-    "todos": [
-        {"title": "tytul","details": "dupka", "id": 1, "isDone": false},
-        {"title": "tytul2","details": "dupka2", "id": 1, "isDone": false}
-    ]
+  "todos": []
 }

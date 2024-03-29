@@ -1,30 +1,48 @@
 <template>
-    <div class="main">
-        <div class="container border-green-700">
-            <div class="flex w-11/12">
-                <input type="text" placeholder="Enter title" v-model="title"/>
-                <input type="text" class="w-3/4"placeholder="Enter details" v-model="details"/>
-            </div>
-            <button class="btn bg-green-500">ADD</button>
-        </div>
-    </div>
-    
+  <div class="main">
+    <form class="container border-green-700" @submit.prevent="addTodo">
+      <div class="flex w-11/12">
+        <input type="text" placeholder="Enter title" v-model="title" />
+        <input
+          type="text"
+          class="w-3/4"
+          placeholder="Enter details"
+          v-model="details"
+        />
+      </div>
+      <button type="submit" class="btn bg-green-500">ADD</button>
+    </form>
+  </div>
 </template>
 
 <script>
-    export default {
-        data(){
-            return{
-                title: "",
-                details: ""
-            }
-        },
-        methods: {
-            
-        }
-    }
+export default {
+  data() {
+    return {
+      title: "",
+      details: "",
+    };
+  },
+  methods: {
+    async addTodo() {
+      try {
+        const res = await $fetch("http://localhost:3000/todos", {
+          method: "POST",
+          body: {
+            title: this.title,
+            details: this.details,
+          },
+        });
+
+        this.title = "";
+        this.details = "";
+        await this.$emit("todoAdded", res);
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
