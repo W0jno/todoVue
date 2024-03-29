@@ -1,28 +1,25 @@
 <template>
-    <div class="container ">
-        <div class="content">{{ content }}</div>
+    <div class="container">
+        <div class="title">{{ title }}</div> 
         <button class="btn">Delete</button>
     </div>
 </template>
 
 <script>
-    export default {
-        name: "ToDo",
-    data(){
-        return{
-            content: "brauwrka",
-            delete: "",
+export default {
+    name: "ToDo",
+    data() {
+        return {
             isDone: false
-        }
+        };
     },
-    methods: {
-        increment () {
-            this.count++;
-        }
-    }
-    }
-</script>
+    props: {
+        title: String,
+        details: String,
+    },
 
+};
+</script>
 <style  scoped>
 
 </style>

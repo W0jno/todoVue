@@ -10,8 +10,10 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.13.6",
     "json-server": "^1.0.0-alpha.23",
     "nuxt": "^3.11.1",
+    "nuxt-jsonapi": "^2.0.4",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },

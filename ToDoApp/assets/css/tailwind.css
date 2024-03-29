@@ -10,9 +10,10 @@
         @apply rounded-md border-2 border-green-500 w-1/2 flex justify-between p-3 m-5;
     }
     .btn {
-        @apply rounded-md bg-red-500 p-2 w-20;
+        @apply rounded-md bg-red-500 p-2 w-1/12;
     }
-    .content{
+    .details, .title{
         @apply flex items-center
     }
+     
 }
