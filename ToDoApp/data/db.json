@@ -1,3 +1,14 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "id": "2687",
+      "title": "123",
+      "details": "asd"
+    },
+    {
+      "title": "654",
+      "details": "123123",
+      "id": "73b0"
+    }
+  ]
 }
